@@ -141,7 +141,7 @@ let myInfo = [
     "name" : "typoon",
     "age" : "unknown",
     "gender" : "male",
-    "girlFriend" : "jane"
+    "girlFriend" : "anna"
 ]
 
 myInfo["name"]
