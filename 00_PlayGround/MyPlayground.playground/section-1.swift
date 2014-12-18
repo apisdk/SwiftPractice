@@ -142,7 +142,7 @@ let myInfo = [
     "job"   : "Developer",
     "age" : "unknown",
     "gender" : "male",
-    "girlFriend" : "anna"
+    "girlFriend" : "Jane"
 ]
 
 myInfo["name"]
