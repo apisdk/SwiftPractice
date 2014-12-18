@@ -138,7 +138,8 @@ resultForCastAnyObject.boolValue
 resultForCastAnyObject.floatValue
 
 let myInfo = [
-    "name" : "typoon",
+    "name" : "Typoon",
+    "job"   : "Developer",
     "age" : "unknown",
     "gender" : "male",
     "girlFriend" : "anna"
@@ -148,7 +149,7 @@ myInfo["name"]
 
 let girlFriend: String? = myInfo["girlFriend"]
 
-if girlFriend
+if girlFriend == nil
 {
     let her = girlFriend!
     println("Your girl friend is \(her)")
