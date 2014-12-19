@@ -165,3 +165,20 @@ if let her = myInfo["girlFriend"]
 }
 
 
+class Person {
+    var residence: Residence?
+}
+
+class Residence {
+    var numberOfRooms = 1
+}
+
+let typoon = Person()
+//typoon.residence = Residence()
+
+// optional chaining
+if let roomNumber = typoon.residence?.numberOfRooms
+{
+    println("Typoon have \(roomNumber) rooms")
+}
+
