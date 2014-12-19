@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 
+let kSampleFileName = "sample-160"
+
 class MainViewController: UIViewController, AVAudioPlayerDelegate
 {
     var audioPlayer: AVAudioPlayer?
@@ -18,15 +20,26 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet var volumeSlider:UISlider!
     @IBOutlet var volumeLabel:UILabel!
     
+    @IBAction func willPlayAudio(button: UIButton)
+    {
+        self.audioPlayer!.play()
+    }
+    
+    @IBAction func willStopAudio(button: UIButton)
+    {
+        self.audioPlayer!.stop()
+    }
+    
     override func viewDidLoad() {
         // get URL for mp3 file
-        var bundleURL: NSURL = NSBundle.mainBundle().URLForResource("sound", withExtension: "mp3")!
+        // free license sample from : http://sampleswap.org/viewtopic.php?t=2450
+        var bundleURL: NSURL = NSBundle.mainBundle().URLForResource(kSampleFileName, withExtension: "mp3")!
         
         // init player
         self.audioPlayer = AVAudioPlayer(contentsOfURL: bundleURL, error: nil)
         
         self.audioPlayer!.delegate = self
-        self.progressSlider!.value = 0
+        //self.progressSlider!.value = 0
         
         super.viewDidLoad()
     }

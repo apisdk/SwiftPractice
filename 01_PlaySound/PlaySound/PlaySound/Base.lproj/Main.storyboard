@@ -28,6 +28,9 @@
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="willPlayAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hrq-Rb-uAF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lan-1G-W31">
                                 <rect key="frame" x="504" y="545" width="70" height="45"/>
@@ -38,6 +41,9 @@
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="willStopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="spR-ND-1Gs"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5uE-Ix-tMK">
                                 <rect key="frame" x="104" y="553" width="392" height="31"/>

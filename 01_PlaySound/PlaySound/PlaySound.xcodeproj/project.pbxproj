@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0A156AB1A442E6D00ECBA37 /* sample-160.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0A156AA1A442E6D00ECBA37 /* sample-160.mp3 */; };
+		A0A156AD1A442E7C00ECBA37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */; };
 		A0DD9F9C1A44132F007A436B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9B1A44132F007A436B /* main.m */; };
 		A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9E1A44132F007A436B /* AppDelegate.m */; };
 		A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FA01A44132F007A436B /* PlaySound.xcdatamodeld */; };
@@ -14,7 +16,6 @@
 		A0DD9FAA1A44132F007A436B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FA91A44132F007A436B /* Images.xcassets */; };
 		A0DD9FAD1A44132F007A436B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FAB1A44132F007A436B /* LaunchScreen.xib */; };
 		A0DD9FB91A44132F007A436B /* PlaySoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FB81A44132F007A436B /* PlaySoundTests.m */; };
-		A0DD9FC71A44269A007A436B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FC61A44269A007A436B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0A156AA1A442E6D00ECBA37 /* sample-160.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sample-160.mp3"; path = "SampleFiles/sample-160.mp3"; sourceTree = "<group>"; };
+		A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		A0DD9F961A44132F007A436B /* PlaySound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DD9F9A1A44132F007A436B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DD9F9B1A44132F007A436B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		A0DD9FB71A44132F007A436B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DD9FB81A44132F007A436B /* PlaySoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaySoundTests.m; sourceTree = "<group>"; };
 		A0DD9FC21A442513007A436B /* PlaySound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaySound-Bridging-Header.h"; sourceTree = "<group>"; };
-		A0DD9FC61A44269A007A436B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0A156A71A442DE000ECBA37 /* SampleFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A0A156AA1A442E6D00ECBA37 /* sample-160.mp3 */,
+			);
+			name = SampleFiles;
+			sourceTree = "<group>";
+		};
 		A0DD9F8D1A44132E007A436B = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		A0DD9F981A44132F007A436B /* PlaySound */ = {
 			isa = PBXGroup;
 			children = (
+				A0A156A71A442DE000ECBA37 /* SampleFiles */,
 				A0DD9FC51A442528007A436B /* ViewControllers */,
 				A0DD9F9D1A44132F007A436B /* AppDelegate.h */,
 				A0DD9F9E1A44132F007A436B /* AppDelegate.m */,
@@ -125,7 +136,7 @@
 		A0DD9FC51A442528007A436B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0DD9FC61A44269A007A436B /* MainViewController.swift */,
+				A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DD9FA81A44132F007A436B /* Main.storyboard in Resources */,
+				A0A156AB1A442E6D00ECBA37 /* sample-160.mp3 in Resources */,
 				A0DD9FAD1A44132F007A436B /* LaunchScreen.xib in Resources */,
 				A0DD9FAA1A44132F007A436B /* Images.xcassets in Resources */,
 			);
@@ -233,7 +245,7 @@
 				A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */,
 				A0DD9F9C1A44132F007A436B /* main.m in Sources */,
 				A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */,
-				A0DD9FC71A44269A007A436B /* MainViewController.swift in Sources */,
+				A0A156AD1A442E7C00ECBA37 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +443,7 @@
 				A0DD9FBE1A44132F007A436B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0DD9FBF1A44132F007A436B /* Build configuration list for PBXNativeTarget "PlaySoundTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +452,7 @@
 				A0DD9FC11A44132F007A436B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
