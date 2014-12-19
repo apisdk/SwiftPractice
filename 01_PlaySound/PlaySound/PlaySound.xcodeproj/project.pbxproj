@@ -10,11 +10,11 @@
 		A0DD9F9C1A44132F007A436B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9B1A44132F007A436B /* main.m */; };
 		A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9E1A44132F007A436B /* AppDelegate.m */; };
 		A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FA01A44132F007A436B /* PlaySound.xcdatamodeld */; };
-		A0DD9FA51A44132F007A436B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FA41A44132F007A436B /* ViewController.m */; };
 		A0DD9FA81A44132F007A436B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FA61A44132F007A436B /* Main.storyboard */; };
 		A0DD9FAA1A44132F007A436B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FA91A44132F007A436B /* Images.xcassets */; };
 		A0DD9FAD1A44132F007A436B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FAB1A44132F007A436B /* LaunchScreen.xib */; };
 		A0DD9FB91A44132F007A436B /* PlaySoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FB81A44132F007A436B /* PlaySoundTests.m */; };
+		A0DD9FC71A44269A007A436B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FC61A44269A007A436B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +34,14 @@
 		A0DD9F9D1A44132F007A436B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0DD9F9E1A44132F007A436B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0DD9FA11A44132F007A436B /* PlaySound.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaySound.xcdatamodel; sourceTree = "<group>"; };
-		A0DD9FA31A44132F007A436B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0DD9FA41A44132F007A436B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A0DD9FA71A44132F007A436B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0DD9FA91A44132F007A436B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0DD9FAC1A44132F007A436B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A0DD9FB21A44132F007A436B /* PlaySoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaySoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DD9FB71A44132F007A436B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DD9FB81A44132F007A436B /* PlaySoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaySoundTests.m; sourceTree = "<group>"; };
+		A0DD9FC21A442513007A436B /* PlaySound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaySound-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0DD9FC61A44269A007A436B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,7 @@
 				A0DD9F981A44132F007A436B /* PlaySound */,
 				A0DD9FB51A44132F007A436B /* PlaySoundTests */,
 				A0DD9F971A44132F007A436B /* Products */,
+				A0DD9FC21A442513007A436B /* PlaySound-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,10 +84,9 @@
 		A0DD9F981A44132F007A436B /* PlaySound */ = {
 			isa = PBXGroup;
 			children = (
+				A0DD9FC51A442528007A436B /* ViewControllers */,
 				A0DD9F9D1A44132F007A436B /* AppDelegate.h */,
 				A0DD9F9E1A44132F007A436B /* AppDelegate.m */,
-				A0DD9FA31A44132F007A436B /* ViewController.h */,
-				A0DD9FA41A44132F007A436B /* ViewController.m */,
 				A0DD9FA61A44132F007A436B /* Main.storyboard */,
 				A0DD9FA91A44132F007A436B /* Images.xcassets */,
 				A0DD9FAB1A44132F007A436B /* LaunchScreen.xib */,
@@ -120,6 +120,14 @@
 				A0DD9FB71A44132F007A436B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0DD9FC51A442528007A436B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0DD9FC61A44269A007A436B /* MainViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +232,8 @@
 			files = (
 				A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */,
 				A0DD9F9C1A44132F007A436B /* main.m in Sources */,
-				A0DD9FA51A44132F007A436B /* ViewController.m in Sources */,
 				A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */,
+				A0DD9FC71A44269A007A436B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +357,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PlaySound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlaySound-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -359,9 +370,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PlaySound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlaySound-Bridging-Header.h";
 			};
 			name = Release;
 		};

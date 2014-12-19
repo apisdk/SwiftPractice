@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="MainViewController" customClass="MainViewController" customModule="PlaySound" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,7 +16,85 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHP-gt-kjy">
+                                <rect key="frame" x="26" y="545" width="70" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="MbU-xm-8kK"/>
+                                    <constraint firstAttribute="height" constant="45" id="baK-NF-Fxp"/>
+                                    <constraint firstAttribute="width" constant="70" id="iUQ-4K-eRh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="nmI-4y-2Mc"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lan-1G-W31">
+                                <rect key="frame" x="504" y="545" width="70" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="SGd-Yq-HOY"/>
+                                    <constraint firstAttribute="height" constant="45" id="v6Q-Tw-04y"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5uE-Ix-tMK">
+                                <rect key="frame" x="104" y="553" width="392" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZEb-Hg-h8J"/>
+                                </constraints>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psd-cm-s4K">
+                                <rect key="frame" x="26" y="50" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I5l-Yc-K8K"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ijm-B0-5bT"/>
+                                    <constraint firstAttribute="width" constant="100" id="xXs-We-d28"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-fC-sjK">
+                                <rect key="frame" x="139" y="50" width="94" height="29"/>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnJ-3M-7qP">
+                                <rect key="frame" x="26" y="90" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OJZ-RC-Dw8"/>
+                                    <constraint firstAttribute="width" constant="100" id="RIa-DN-9OP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Psd-cm-s4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="8U7-Cp-20T"/>
+                            <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="DcF-gA-gNE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CHP-gt-kjy" secondAttribute="bottom" constant="10" id="JJJ-kx-hER"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5uE-Ix-tMK" secondAttribute="bottom" constant="17" id="O0Y-nh-rrW"/>
+                            <constraint firstItem="Psd-cm-s4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="S8R-0p-56h"/>
+                            <constraint firstItem="JnJ-3M-7qP" firstAttribute="top" secondItem="Psd-cm-s4K" secondAttribute="bottom" constant="10" id="ULa-kz-Rhk"/>
+                            <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="WzJ-qZ-ZrV"/>
+                            <constraint firstItem="GTz-fC-sjK" firstAttribute="leading" secondItem="Psd-cm-s4K" secondAttribute="trailing" constant="13" id="bny-EI-4JI"/>
+                            <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dbp-aY-CeB"/>
+                            <constraint firstItem="CHP-gt-kjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ejc-KX-O9P"/>
+                            <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="gcy-P5-u49"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lan-1G-W31" secondAttribute="bottom" constant="10" id="pQo-WL-Yoa"/>
+                            <constraint firstItem="JnJ-3M-7qP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="tA4-VV-0SX"/>
+                            <constraint firstItem="GTz-fC-sjK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="u2x-3I-SiG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lan-1G-W31" secondAttribute="trailing" constant="10" id="uhz-jn-538"/>
+                            <constraint firstItem="5uE-Ix-tMK" firstAttribute="leading" secondItem="CHP-gt-kjy" secondAttribute="trailing" constant="10" id="yMy-4h-Cg9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8U7-Cp-20T"/>
+                                <exclude reference="dbp-aY-CeB"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
