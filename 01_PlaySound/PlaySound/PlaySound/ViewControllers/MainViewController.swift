@@ -17,7 +17,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     var progressTimer: NSTimer?
     
     @IBOutlet var progressSlider:UISlider!
-    @IBOutlet var volumeSlider:UISlider!
+    @IBOutlet var volumeStepper:UIStepper!
     @IBOutlet var volumeLabel:UILabel!
     
     
@@ -42,17 +42,31 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
         self.audioPlayer!.delegate = self
         //self.progressSlider!.value = 0
         
+        let currentVolume = Float(self.volumeStepper.value)
+        setVolumeLabel(currentVolume)
         super.viewDidLoad()
     }
     
     func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
         // if error occur, will show alertView about that.
-        let alert: UIAlertView = UIAlertView(title: "에러",
+        let alert: UIAlertView = UIAlertView(title: "error",
             message: "Error occured :: \(error.code) \(error.description)",
             delegate: nil,
             cancelButtonTitle: "Confirm")
         alert.show()
         
+    }
+    
+    @IBAction func changeVolumeStepper(stepper: UIStepper)
+    {
+        let currentVolume = Float(stepper.value)
+        self.audioPlayer!.volume = currentVolume
+        setVolumeLabel(currentVolume)
+    }
+    
+    func setVolumeLabel(volumeValue :Float)
+    {
+        self.volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
     }
 }
 

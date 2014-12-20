@@ -64,6 +64,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-fC-sjK">
                                 <rect key="frame" x="139" y="50" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeVolumeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="xg6-dc-DN0"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnJ-3M-7qP">
                                 <rect key="frame" x="26" y="90" width="100" height="21"/>
@@ -102,6 +105,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Zk4-hw-AtE"/>
+                        <outlet property="volumeStepper" destination="GTz-fC-sjK" id="oJL-ZC-vRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
