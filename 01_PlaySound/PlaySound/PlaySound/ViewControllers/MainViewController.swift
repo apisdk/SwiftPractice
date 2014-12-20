@@ -20,6 +20,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet var volumeSlider:UISlider!
     @IBOutlet var volumeLabel:UILabel!
     
+    
     @IBAction func willPlayAudio(button: UIButton)
     {
         self.audioPlayer!.play()
@@ -42,6 +43,16 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
         //self.progressSlider!.value = 0
         
         super.viewDidLoad()
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        // if error occur, will show alertView about that.
+        let alert: UIAlertView = UIAlertView(title: "에러",
+            message: "Error occured :: \(error.code) \(error.description)",
+            delegate: nil,
+            cancelButtonTitle: "Confirm")
+        alert.show()
+        
     }
 }
 
