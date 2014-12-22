@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A0A156AB1A442E6D00ECBA37 /* sample-160.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0A156AA1A442E6D00ECBA37 /* sample-160.mp3 */; };
 		A0A156AD1A442E7C00ECBA37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */; };
+		A0DCA07A1A47B37600953E70 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DCA0791A47B37600953E70 /* ViewControllerTests.swift */; };
+		A0DCA07B1A47B42700953E70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */; };
 		A0DD9F9C1A44132F007A436B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9B1A44132F007A436B /* main.m */; };
 		A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9F9E1A44132F007A436B /* AppDelegate.m */; };
 		A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FA01A44132F007A436B /* PlaySound.xcdatamodeld */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		A0A156AA1A442E6D00ECBA37 /* sample-160.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sample-160.mp3"; path = "SampleFiles/sample-160.mp3"; sourceTree = "<group>"; };
 		A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		A0DCA0781A47B37500953E70 /* PlaySoundTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaySoundTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0DCA0791A47B37600953E70 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		A0DD9F961A44132F007A436B /* PlaySound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DD9F9A1A44132F007A436B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DD9F9B1A44132F007A436B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			children = (
 				A0DD9FB81A44132F007A436B /* PlaySoundTests.m */,
 				A0DD9FB61A44132F007A436B /* Supporting Files */,
+				A0DCA0791A47B37600953E70 /* ViewControllerTests.swift */,
+				A0DCA0781A47B37500953E70 /* PlaySoundTests-Bridging-Header.h */,
 			);
 			path = PlaySoundTests;
 			sourceTree = "<group>";
@@ -253,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0DCA07A1A47B37600953E70 /* ViewControllerTests.swift in Sources */,
 				A0DD9FB91A44132F007A436B /* PlaySoundTests.m in Sources */,
+				A0DCA07B1A47B42700953E70 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -405,6 +414,8 @@
 				INFOPLIST_FILE = PlaySoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlaySoundTests/PlaySoundTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaySound.app/PlaySound";
 			};
 			name = Debug;
@@ -413,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -420,6 +432,7 @@
 				INFOPLIST_FILE = PlaySoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PlaySoundTests/PlaySoundTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaySound.app/PlaySound";
 			};
 			name = Release;
