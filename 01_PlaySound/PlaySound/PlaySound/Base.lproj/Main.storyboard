@@ -107,6 +107,7 @@
                     </view>
                     <connections>
                         <outlet property="playButton" destination="CHP-gt-kjy" id="mpU-LL-0US"/>
+                        <outlet property="progressSlider" destination="5uE-Ix-tMK" id="wGa-PJ-Llr"/>
                         <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Zk4-hw-AtE"/>
                         <outlet property="volumeStepper" destination="GTz-fC-sjK" id="oJL-ZC-vRY"/>
                     </connections>

@@ -8,20 +8,37 @@
 
 import UIKit
 import XCTest
+import AVFoundation
+
 
 class ViewControllerTests: XCTestCase {
     
-    var mainViewController: UIViewController?
+    var mainViewController: UIViewController!
 
     override func setUp() {
         super.setUp()
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        self.mainViewController = storyboard.instantiateViewControllerWithIdentifier("Main") as? UIViewController
+        
+        self.mainViewController = topViewController()
+        
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        var mainVc: AnyObject = storyboard.instantiateViewControllerWithIdentifier("Main") as AnyObject
+//        self.mainViewController = mainVc as UIViewController
+//
         
         XCTAssertNotNil(self.mainViewController, "MainViewController nil.")
+        XCTAssertNotNil(self.mainViewController!.view, "view did not load")
+        
 
+    }
+    
+    func topViewController() -> UIViewController
+    {
+        var windowss: NSArray = UIApplication.sharedApplication().windows
+        var window: UIWindow = windowss[0] as UIWindow
+        
+        return window.rootViewController! as UIViewController
     }
     
     override func tearDown() {
@@ -34,5 +51,16 @@ class ViewControllerTests: XCTestCase {
         println("check loaded view")
         XCTAssertNotNil(self.mainViewController, "ViewController not nil")
         XCTAssertNotNil(self.mainViewController!.view, "view did not load")
+    }
+    
+    func testInitAudioPlayer() {
+        var audioPlayer:AVAudioPlayer!
+        var mv: MusicPlayer!
+        if (self.mainViewController!.respondsToSelector(Selector("audioPlayer"))) {
+
+            var audioPlayer:AVAudioPlayer = self.mainViewController.valueForKey("audioPlayer")! as AVAudioPlayer
+            XCTAssertNotNil(audioPlayer, "audioPlayer is nil")
+        }
+        
     }
 }

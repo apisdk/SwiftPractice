@@ -11,9 +11,8 @@ import AVFoundation
 
 let kSampleFileName = "sample-160"
 
-class MainViewController: UIViewController, AVAudioPlayerDelegate
+class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
 {
-    var audioPlayer: AVAudioPlayer?
     var progressTimer: NSTimer?
     
     @IBOutlet var progressSlider:UISlider!
@@ -21,14 +20,18 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet var volumeLabel:UILabel!
     @IBOutlet var playButton: UIButton!
     
+
     @IBAction func willPlayAudio(button: UIButton)
     {
         self.audioPlayer!.play()
+        makeProgressTimer()
     }
     
     @IBAction func willStopAudio(button: UIButton)
     {
+        invalidateProgressTimer()
         self.audioPlayer!.stop()
+
     }
     
     override func viewDidLoad() {
@@ -40,13 +43,13 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
         self.audioPlayer = AVAudioPlayer(contentsOfURL: bundleURL, error: nil)
         
         self.audioPlayer!.delegate = self
-        //self.progressSlider!.value = 0
+        self.progressSlider!.value = 0
         
         let currentVolume = Float(self.volumeStepper.value)
         setVolumeLabel(currentVolume)
         super.viewDidLoad()
     }
-    
+
     func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
         // if error occur, will show alertView about that.
         let alert: UIAlertView = UIAlertView(title: "error",
@@ -56,7 +59,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
         alert.show()
         
     }
-    
+
     @IBAction func changeVolumeStepper(stepper: UIStepper)
     {
         let currentVolume = Float(stepper.value)
@@ -68,5 +71,29 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     {
         self.volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
     }
+    
+    func makeProgressTimer()
+    {
+        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(1,
+            target: self,
+            selector: Selector("checkCurrentTime"),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    func invalidateProgressTimer()
+    {
+        self.progressTimer!.invalidate()
+    }
+    
+    func checkCurrentTime()
+    {
+        self.progressSlider!.value = CFloat(self.audioPlayer!.currentTime / self.audioPlayer!.duration)
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        invalidateProgressTimer()
+    }
+    
 }
 

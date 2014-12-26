@@ -18,6 +18,8 @@
 		A0DD9FAA1A44132F007A436B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FA91A44132F007A436B /* Images.xcassets */; };
 		A0DD9FAD1A44132F007A436B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DD9FAB1A44132F007A436B /* LaunchScreen.xib */; };
 		A0DD9FB91A44132F007A436B /* PlaySoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DD9FB81A44132F007A436B /* PlaySoundTests.m */; };
+		A0EB91601A4D7BB100329BED /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB915F1A4D7BB100329BED /* MusicPlayerViewController.swift */; };
+		A0EB91611A4D7BB100329BED /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB915F1A4D7BB100329BED /* MusicPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		A0DD9FB71A44132F007A436B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0DD9FB81A44132F007A436B /* PlaySoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaySoundTests.m; sourceTree = "<group>"; };
 		A0DD9FC21A442513007A436B /* PlaySound-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaySound-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0EB915F1A4D7BB100329BED /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MusicPlayerViewController.swift; path = ViewControllers/MusicPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				A0A156AC1A442E7C00ECBA37 /* MainViewController.swift */,
+				A0EB915F1A4D7BB100329BED /* MusicPlayerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +254,7 @@
 			files = (
 				A0DD9F9F1A44132F007A436B /* AppDelegate.m in Sources */,
 				A0DD9F9C1A44132F007A436B /* main.m in Sources */,
+				A0EB91601A4D7BB100329BED /* MusicPlayerViewController.swift in Sources */,
 				A0DD9FA21A44132F007A436B /* PlaySound.xcdatamodeld in Sources */,
 				A0A156AD1A442E7C00ECBA37 /* MainViewController.swift in Sources */,
 			);
@@ -262,6 +267,7 @@
 				A0DCA07A1A47B37600953E70 /* ViewControllerTests.swift in Sources */,
 				A0DD9FB91A44132F007A436B /* PlaySoundTests.m in Sources */,
 				A0DCA07B1A47B42700953E70 /* MainViewController.swift in Sources */,
+				A0EB91611A4D7BB100329BED /* MusicPlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
