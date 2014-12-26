@@ -19,7 +19,7 @@ class MainViewController: UIViewController, AVAudioPlayerDelegate
     @IBOutlet var progressSlider:UISlider!
     @IBOutlet var volumeStepper:UIStepper!
     @IBOutlet var volumeLabel:UILabel!
-    
+    @IBOutlet var playButton: UIButton!
     
     @IBAction func willPlayAudio(button: UIButton)
     {

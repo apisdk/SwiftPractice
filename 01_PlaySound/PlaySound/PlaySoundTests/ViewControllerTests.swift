@@ -9,19 +9,19 @@
 import UIKit
 import XCTest
 
-
 class ViewControllerTests: XCTestCase {
     
-    var mainViewController: MainViewController!
-    
+    var mainViewController: UIViewController?
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        dispatch_async(dispatch_get_main_queue(), {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            self.mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainVC") as MainViewController
-        })
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        self.mainViewController = storyboard.instantiateViewControllerWithIdentifier("Main") as? UIViewController
+        
+        XCTAssertNotNil(self.mainViewController, "MainViewController nil.")
+
     }
     
     override func tearDown() {
@@ -31,11 +31,8 @@ class ViewControllerTests: XCTestCase {
 
     func testViewDidLoad() {
         // This is an example of a functional test case.
-        
-        dispatch_async(dispatch_get_main_queue(), {
-
-            XCTAssertNotNil(self.mainViewController, "ViewController not nil")
-            XCTAssertNotNil(self.mainViewController.view, "view did not load")
-        })
+        println("check loaded view")
+        XCTAssertNotNil(self.mainViewController, "ViewController not nil")
+        XCTAssertNotNil(self.mainViewController!.view, "view did not load")
     }
 }
