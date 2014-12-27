@@ -19,18 +19,14 @@ class ViewControllerTests: XCTestCase {
         super.setUp()
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
         self.mainViewController = topViewController()
         
 //        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        var mainVc: AnyObject = storyboard.instantiateViewControllerWithIdentifier("Main") as AnyObject
 //        self.mainViewController = mainVc as UIViewController
 //
-        
         XCTAssertNotNil(self.mainViewController, "MainViewController nil.")
         XCTAssertNotNil(self.mainViewController!.view, "view did not load")
-        
-
     }
     
     func topViewController() -> UIViewController
@@ -53,12 +49,19 @@ class ViewControllerTests: XCTestCase {
         XCTAssertNotNil(self.mainViewController!.view, "view did not load")
     }
     
-    func testInitAudioPlayer() {
-        
+    func testAudioPlayer() {
         if (self.mainViewController!.respondsToSelector(Selector("audioPlayer"))) {
             var audioPlayer:AVAudioPlayer = self.mainViewController.valueForKey("audioPlayer")! as AVAudioPlayer
             XCTAssertNotNil(audioPlayer, "audioPlayer is nil")
+            XCTAssertTrue(audioPlayer.volume >= 0, "volume is not greater than 0")
         }
-        
     }
+    
+    func testProgressSlider() {
+        if (self.mainViewController!.respondsToSelector(Selector("progressSlider"))) {
+            var progressSlider:UISlider = self.mainViewController.valueForKey("progressSlider")! as UISlider
+            XCTAssertNotNil(progressSlider, "progressSlider is nil")
+        }
+    }
+
 }
