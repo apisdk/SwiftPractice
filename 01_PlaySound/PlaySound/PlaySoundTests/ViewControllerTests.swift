@@ -54,10 +54,8 @@ class ViewControllerTests: XCTestCase {
     }
     
     func testInitAudioPlayer() {
-        var audioPlayer:AVAudioPlayer!
-        var mv: MusicPlayer!
+        
         if (self.mainViewController!.respondsToSelector(Selector("audioPlayer"))) {
-
             var audioPlayer:AVAudioPlayer = self.mainViewController.valueForKey("audioPlayer")! as AVAudioPlayer
             XCTAssertNotNil(audioPlayer, "audioPlayer is nil")
         }
