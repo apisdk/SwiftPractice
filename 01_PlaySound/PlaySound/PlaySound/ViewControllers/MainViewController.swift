@@ -50,15 +50,6 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         super.viewDidLoad()
     }
 
-    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-        // if error occur, will show alertView about that.
-        let alert: UIAlertView = UIAlertView(title: "error",
-            message: "Error occured :: \(error.code) \(error.description)",
-            delegate: nil,
-            cancelButtonTitle: "Confirm")
-        alert.show()
-        
-    }
 
     @IBAction func changeVolumeStepper(stepper: UIStepper)
     {
@@ -95,5 +86,15 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         invalidateProgressTimer()
     }
     
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        // if error occur, will show alertView about that.
+        let alert: UIAlertView = UIAlertView(title: "error",
+            message: "Error occured :: \(error.code) \(error.description)",
+            delegate: nil,
+            cancelButtonTitle: "Confirm")
+        alert.show()
+        
+    }
 }
 
