@@ -29,7 +29,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="willPlayAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hrq-Rb-uAF"/>
+                                    <action selector="playButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Oi-bc-Foi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lan-1G-W31">
@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="willStopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="spR-ND-1Gs"/>
+                                    <action selector="stopButtonDidTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dk8-dV-l7y"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5uE-Ix-tMK">
@@ -65,7 +65,7 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="VolumeStepper" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-fC-sjK">
                                 <rect key="frame" x="139" y="50" width="94" height="29"/>
                                 <connections>
-                                    <action selector="changeVolumeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="xg6-dc-DN0"/>
+                                    <action selector="volumeStepperDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1dM-8D-1Lp"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProgressLabel" text="0" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-iX-8ap">
@@ -121,7 +121,7 @@
                         <outlet property="progressLabel" destination="ZZw-iX-8ap" id="eb0-3I-sLs"/>
                         <outlet property="progressSlider" destination="5uE-Ix-tMK" id="wGa-PJ-Llr"/>
                         <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Aj0-dZ-ZzN"/>
-                        <outlet property="volumeStepper" destination="GTz-fC-sjK" id="oJL-ZC-vRY"/>
+                        <outlet property="volumeStepper" destination="GTz-fC-sjK" id="nLv-dw-dzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
