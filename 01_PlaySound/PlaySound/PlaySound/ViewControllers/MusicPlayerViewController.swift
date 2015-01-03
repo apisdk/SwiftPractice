@@ -11,13 +11,13 @@ import UIKit
 import AVFoundation
 
 @objc
-protocol MusicPlayer: class {
+protocol MediaPlayer: class {
     var audioPlayer: AVAudioPlayer! { get set }
     func nowPlayer() -> AVAudioPlayer
 }
 
 
-class MusicPlayerViewController : UIViewController, MusicPlayer
+class MusicPlayerViewController : UIViewController, MediaPlayer
 {
      var audioPlayer: AVAudioPlayer!
     
