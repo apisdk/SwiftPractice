@@ -19,7 +19,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     @IBOutlet var volumeStepper:UIStepper!
     @IBOutlet var volumeLabel:UILabel!
     @IBOutlet var playButton: UIButton!
-    
+    @IBOutlet var progressLabel: UILabel!
 
     @IBAction func willPlayAudio(button: UIButton)
     {
@@ -35,6 +35,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         // get URL for mp3 file
         // free license sample from : http://sampleswap.org/viewtopic.php?t=2450
         var bundleURL: NSURL = NSBundle.mainBundle().URLForResource(kSampleFileName, withExtension: "mp3")!
@@ -44,10 +45,11 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         
         self.audioPlayer!.delegate = self
         self.progressSlider!.value = 0
-        
+        self.progressLabel.text = "0"
+        updateCurrentTime()
         let currentVolume = Float(self.volumeStepper.value)
         setVolumeLabel(currentVolume)
-        super.viewDidLoad()
+
     }
 
 
@@ -80,12 +82,19 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     func checkCurrentTime()
     {
         self.progressSlider!.value = CFloat(self.audioPlayer!.currentTime / self.audioPlayer!.duration)
+        updateCurrentTime()
+        
+    }
+    
+    func updateCurrentTime()
+    {
+        let currentTime = NSString(format: "%.2f", self.progressSlider.value)
+        self.progressLabel!.text = currentTime
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
         invalidateProgressTimer()
     }
-    
     
     func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
         // if error occur, will show alertView about that.

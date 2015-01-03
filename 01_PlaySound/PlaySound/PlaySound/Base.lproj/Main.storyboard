@@ -68,8 +68,17 @@
                                     <action selector="changeVolumeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="xg6-dc-DN0"/>
                                 </connections>
                             </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ProgressLabel" text="0" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-iX-8ap">
+                                <rect key="frame" x="279" y="515" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="uoY-7g-lSq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnJ-3M-7qP">
-                                <rect key="frame" x="26" y="90" width="100" height="21"/>
+                                <rect key="frame" x="26" y="94" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="OJZ-RC-Dw8"/>
                                     <constraint firstAttribute="width" constant="100" id="RIa-DN-9OP"/>
@@ -86,13 +95,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CHP-gt-kjy" secondAttribute="bottom" constant="10" id="JJJ-kx-hER"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5uE-Ix-tMK" secondAttribute="bottom" constant="17" id="O0Y-nh-rrW"/>
                             <constraint firstItem="Psd-cm-s4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="S8R-0p-56h"/>
-                            <constraint firstItem="JnJ-3M-7qP" firstAttribute="top" secondItem="Psd-cm-s4K" secondAttribute="bottom" constant="10" id="ULa-kz-Rhk"/>
+                            <constraint firstItem="JnJ-3M-7qP" firstAttribute="top" secondItem="Psd-cm-s4K" secondAttribute="bottom" constant="14" id="ULa-kz-Rhk"/>
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="WzJ-qZ-ZrV"/>
+                            <constraint firstItem="ZZw-iX-8ap" firstAttribute="centerX" secondItem="5uE-Ix-tMK" secondAttribute="centerX" id="Zor-F6-TYg"/>
                             <constraint firstItem="GTz-fC-sjK" firstAttribute="leading" secondItem="Psd-cm-s4K" secondAttribute="trailing" constant="13" id="bny-EI-4JI"/>
                             <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dbp-aY-CeB"/>
                             <constraint firstItem="CHP-gt-kjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ejc-KX-O9P"/>
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="gcy-P5-u49"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lan-1G-W31" secondAttribute="bottom" constant="10" id="pQo-WL-Yoa"/>
+                            <constraint firstItem="5uE-Ix-tMK" firstAttribute="top" secondItem="ZZw-iX-8ap" secondAttribute="bottom" constant="17" id="pZX-dD-KK1"/>
                             <constraint firstItem="JnJ-3M-7qP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="tA4-VV-0SX"/>
                             <constraint firstItem="GTz-fC-sjK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="u2x-3I-SiG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lan-1G-W31" secondAttribute="trailing" constant="10" id="uhz-jn-538"/>
@@ -107,8 +118,9 @@
                     </view>
                     <connections>
                         <outlet property="playButton" destination="CHP-gt-kjy" id="mpU-LL-0US"/>
+                        <outlet property="progressLabel" destination="ZZw-iX-8ap" id="eb0-3I-sLs"/>
                         <outlet property="progressSlider" destination="5uE-Ix-tMK" id="wGa-PJ-Llr"/>
-                        <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Zk4-hw-AtE"/>
+                        <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Aj0-dZ-ZzN"/>
                         <outlet property="volumeStepper" destination="GTz-fC-sjK" id="oJL-ZC-vRY"/>
                     </connections>
                 </viewController>
