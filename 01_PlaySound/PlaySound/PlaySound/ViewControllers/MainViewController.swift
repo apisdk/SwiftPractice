@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
-let kSampleFileName = "sample-160"
+let kSampleSoundFileName = "sample-160"
+let kProgressLabelTextFormat = "%.0f %%"
+let kCancelButtonTitle = "Confirm"
 
 class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
 {
@@ -49,9 +51,9 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     {
         // get URL for mp3 file
         // free license sample from : http://sampleswap.org/viewtopic.php?t=2450
-        var bundleURL: NSURL = NSBundle.mainBundle().URLForResource(kSampleFileName, withExtension: "mp3")!
+        var soundFileURL: NSURL = NSBundle.mainBundle().URLForResource(kSampleSoundFileName, withExtension: "mp3")!
 
-        self.audioPlayer = AVAudioPlayer(contentsOfURL: bundleURL, error: nil)
+        self.audioPlayer = AVAudioPlayer(contentsOfURL: soundFileURL, error: nil)
         self.audioPlayer!.delegate = self
         self.audioPlayer.volume = 0.1
     }
@@ -95,7 +97,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func updateProgressLabel()
     {
-        let currentTime = NSString(format: "%.0f %%", self.progressSlider.value * 100)
+        let currentTime = NSString(format: kProgressLabelTextFormat, self.progressSlider.value * 100)
         self.progressLabel!.text = currentTime
     }
     
@@ -135,20 +137,18 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func progressSliderDidTouchUpInside()
     {
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let resume: Bool = self.audioPlayer.playing
-            
-            self.invalidateProgressTimer()
+        let resume: Bool = self.audioPlayer.playing
+        
+        self.invalidateProgressTimer()
 
-            self.audioPlayer.stop()
-            self.audioPlayer.currentTime = NSTimeInterval(CFloat(self.audioPlayer.duration) * self.progressSlider.value)
-            self.audioPlayer.prepareToPlay()
-            if (resume) {
-                self.audioPlayer.play()
-            }
-            self.makeProgressTimer()
-            self.updateProgressLabel()
-//        })
+        self.audioPlayer.stop()
+        self.audioPlayer.currentTime = NSTimeInterval(CFloat(self.audioPlayer.duration) * self.progressSlider.value)
+        self.audioPlayer.prepareToPlay()
+        if (resume) {
+            self.audioPlayer.play()
+        }
+        self.makeProgressTimer()
+        self.updateProgressLabel()
     }
     
     // MARK : - audioPlayer delegate mehtods
@@ -162,7 +162,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         let alert: UIAlertView = UIAlertView(title: "error",
             message: "Error occured :: \(error.code) \(error.description)",
             delegate: nil,
-            cancelButtonTitle: "Confirm")
+            cancelButtonTitle: kCancelButtonTitle)
         alert.show()
         
     }
