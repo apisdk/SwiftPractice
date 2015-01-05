@@ -22,7 +22,8 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     @IBOutlet var volumeLabel:UILabel!
     @IBOutlet var playButton: UIButton!
     @IBOutlet var progressLabel: UILabel!
-
+    @IBOutlet var playedTimeLabel: UILabel!
+    
     // MARK: - UIViewController override methods
     
     override func viewDidLoad() {
@@ -43,6 +44,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         // update UI
         updateProgressLabel()
         updateVolumeLabel()
+        updatePlayedTimeLabel()
     }
     
     // MARK: - initialize methods
@@ -97,8 +99,14 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func updateProgressLabel()
     {
-        let currentTime = NSString(format: kProgressLabelTextFormat, self.progressSlider.value * 100)
-        self.progressLabel!.text = currentTime
+        let progressPercentValue = NSString(format: kProgressLabelTextFormat, self.progressSlider.value * 100)
+        self.progressLabel!.text = progressPercentValue
+    }
+    
+    func updatePlayedTimeLabel()
+    {
+        let currentTime = CFloat(self.audioPlayer!.currentTime)
+        self.playedTimeLabel.text = NSString(format: "%.0fsec", currentTime)
     }
     
     // MARK: - progressTimer
@@ -130,7 +138,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         
         self.progressSlider!.value = CFloat(self.audioPlayer!.currentTime / self.audioPlayer!.duration)
         updateProgressLabel()
-        
+        updatePlayedTimeLabel()
     }
 
     // MARK: - progressSlider

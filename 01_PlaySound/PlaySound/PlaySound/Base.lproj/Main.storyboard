@@ -87,10 +87,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="PlayTime" text="0 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-7N-L4D" userLabel="PlayedTimeLabel">
+                                <rect key="frame" x="106" y="515" width="42" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Play Time"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Psd-cm-s4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="8U7-Cp-20T"/>
+                            <constraint firstItem="tmL-7N-L4D" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="leading" id="9uz-R5-Bau"/>
+                            <constraint firstItem="5uE-Ix-tMK" firstAttribute="top" secondItem="tmL-7N-L4D" secondAttribute="bottom" constant="17" id="B7p-ce-ON6"/>
                             <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="DcF-gA-gNE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CHP-gt-kjy" secondAttribute="bottom" constant="10" id="JJJ-kx-hER"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5uE-Ix-tMK" secondAttribute="bottom" constant="17" id="O0Y-nh-rrW"/>
@@ -99,7 +107,6 @@
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="WzJ-qZ-ZrV"/>
                             <constraint firstItem="ZZw-iX-8ap" firstAttribute="centerX" secondItem="5uE-Ix-tMK" secondAttribute="centerX" id="Zor-F6-TYg"/>
                             <constraint firstItem="GTz-fC-sjK" firstAttribute="leading" secondItem="Psd-cm-s4K" secondAttribute="trailing" constant="13" id="bny-EI-4JI"/>
-                            <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dbp-aY-CeB"/>
                             <constraint firstItem="CHP-gt-kjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ejc-KX-O9P"/>
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="gcy-P5-u49"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lan-1G-W31" secondAttribute="bottom" constant="10" id="pQo-WL-Yoa"/>
@@ -109,15 +116,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="lan-1G-W31" secondAttribute="trailing" constant="10" id="uhz-jn-538"/>
                             <constraint firstItem="5uE-Ix-tMK" firstAttribute="leading" secondItem="CHP-gt-kjy" secondAttribute="trailing" constant="10" id="yMy-4h-Cg9"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="8U7-Cp-20T"/>
-                                <exclude reference="dbp-aY-CeB"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="CHP-gt-kjy" id="mpU-LL-0US"/>
+                        <outlet property="playedTimeLabel" destination="tmL-7N-L4D" id="ZDO-DI-zrY"/>
                         <outlet property="progressLabel" destination="ZZw-iX-8ap" id="eb0-3I-sLs"/>
                         <outlet property="progressSlider" destination="5uE-Ix-tMK" id="wGa-PJ-Llr"/>
                         <outlet property="volumeLabel" destination="JnJ-3M-7qP" id="Aj0-dZ-ZzN"/>
