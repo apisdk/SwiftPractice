@@ -28,13 +28,13 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // init player
-        initPlayer()
+        // load player
+        loadPlayer()
         
-        // init volumeStepper
+        // set volumeStepper
         self.volumeStepper.value = 0.1
         
-        // init progressSlider
+        // set progressSlider
         self.progressSlider!.value = 0
         self.progressSlider.addTarget(self,
             action: Selector("progressSliderDidTouchUpInside"),
@@ -47,7 +47,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     // MARK: - initialize methods
     
-    func initPlayer()
+    func loadPlayer()
     {
         // get URL for mp3 file
         // free license sample from : http://sampleswap.org/viewtopic.php?t=2450
