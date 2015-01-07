@@ -87,8 +87,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="PlayTime" text="0 sec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-7N-L4D" userLabel="PlayedTimeLabel">
-                                <rect key="frame" x="106" y="515" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="PlayTime" text="0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-7N-L4D" userLabel="PlayedTimeLabel">
+                                <rect key="frame" x="40" y="515" width="56" height="21"/>
                                 <accessibility key="accessibilityConfiguration" label="Play Time"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -97,18 +97,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tmL-7N-L4D" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="leading" id="9uz-R5-Bau"/>
-                            <constraint firstItem="5uE-Ix-tMK" firstAttribute="top" secondItem="tmL-7N-L4D" secondAttribute="bottom" constant="17" id="B7p-ce-ON6"/>
                             <constraint firstItem="Psd-cm-s4K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="DcF-gA-gNE"/>
+                            <constraint firstItem="tmL-7N-L4D" firstAttribute="top" secondItem="ZZw-iX-8ap" secondAttribute="top" id="Dna-lY-HuV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CHP-gt-kjy" secondAttribute="bottom" constant="10" id="JJJ-kx-hER"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5uE-Ix-tMK" secondAttribute="bottom" constant="17" id="O0Y-nh-rrW"/>
+                            <constraint firstItem="tmL-7N-L4D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="Oqz-6t-3cg"/>
                             <constraint firstItem="Psd-cm-s4K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="S8R-0p-56h"/>
                             <constraint firstItem="JnJ-3M-7qP" firstAttribute="top" secondItem="Psd-cm-s4K" secondAttribute="bottom" constant="14" id="ULa-kz-Rhk"/>
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="WzJ-qZ-ZrV"/>
                             <constraint firstItem="ZZw-iX-8ap" firstAttribute="centerX" secondItem="5uE-Ix-tMK" secondAttribute="centerX" id="Zor-F6-TYg"/>
                             <constraint firstItem="GTz-fC-sjK" firstAttribute="leading" secondItem="Psd-cm-s4K" secondAttribute="trailing" constant="13" id="bny-EI-4JI"/>
+                            <constraint firstItem="tmL-7N-L4D" firstAttribute="trailing" secondItem="CHP-gt-kjy" secondAttribute="trailing" id="dCX-LU-8na"/>
                             <constraint firstItem="CHP-gt-kjy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ejc-KX-O9P"/>
                             <constraint firstItem="lan-1G-W31" firstAttribute="leading" secondItem="5uE-Ix-tMK" secondAttribute="trailing" constant="10" id="gcy-P5-u49"/>
+                            <constraint firstItem="tmL-7N-L4D" firstAttribute="baseline" secondItem="ZZw-iX-8ap" secondAttribute="baseline" id="nA3-My-4FO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lan-1G-W31" secondAttribute="bottom" constant="10" id="pQo-WL-Yoa"/>
                             <constraint firstItem="5uE-Ix-tMK" firstAttribute="top" secondItem="ZZw-iX-8ap" secondAttribute="bottom" constant="17" id="pZX-dD-KK1"/>
                             <constraint firstItem="JnJ-3M-7qP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="tA4-VV-0SX"/>
