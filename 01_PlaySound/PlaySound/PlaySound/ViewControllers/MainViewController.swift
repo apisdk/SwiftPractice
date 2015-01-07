@@ -97,16 +97,41 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         self.volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
     }
     
-    func updateProgressLabel()
+    private func updateProgressLabel()
     {
         let progressPercentValue = NSString(format: kProgressLabelTextFormat, self.progressSlider.value * 100)
         self.progressLabel!.text = progressPercentValue
     }
     
-    func updatePlayedTimeLabel()
+    private func updatePlayedTimeLabel()
     {
-        let currentTime = CFloat(self.audioPlayer!.currentTime)
-        self.playedTimeLabel.text = NSString(format: "%.0fsec", currentTime)
+        func playTimeLabelText(currentTimeValue: Float) -> NSAttributedString {
+            let currentTimeFontSize: CGFloat = 18.0
+            let timeUnitFontSize: CGFloat = 12.0
+            
+            func currentTimeString(timeString: Float) -> NSAttributedString {
+                let currentTimeString: String = String(format: "%.0f", timeString)
+                let stringAttribute: NSDictionary = [NSFontAttributeName : UIFont.systemFontOfSize(currentTimeFontSize), NSForegroundColorAttributeName : UIColor.redColor()]
+                let result: NSAttributedString = NSAttributedString(string: currentTimeString, attributes: stringAttribute)
+                return result
+            }
+            
+            func timeUnitString() -> NSAttributedString {
+                let stringAttribute: NSDictionary = [NSFontAttributeName : UIFont.systemFontOfSize(timeUnitFontSize), NSForegroundColorAttributeName : UIColor.grayColor()]
+                let result: NSAttributedString = NSAttributedString(string: " sec", attributes: stringAttribute)
+                return result
+            }
+
+            let playTimelabelText: NSMutableAttributedString = NSMutableAttributedString()
+            playTimelabelText.appendAttributedString(currentTimeString(currentTimeValue))
+            playTimelabelText.appendAttributedString(timeUnitString())
+            
+            return playTimelabelText
+        }
+        
+        let currentTimeValue = CFloat(self.audioPlayer!.currentTime)
+        
+        self.playedTimeLabel.attributedText = playTimeLabelText(currentTimeValue)
     }
     
     // MARK: - progressTimer

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import AVFoundation
 
-@objc
 protocol MediaPlayer: class {
     var audioPlayer: AVAudioPlayer! { get set }
     func nowPlayer() -> AVAudioPlayer
