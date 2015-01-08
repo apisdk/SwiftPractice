@@ -21,6 +21,6 @@ class MusicPlayerViewController : UIViewController, MediaPlayer
      var audioPlayer: AVAudioPlayer!
     
     func nowPlayer() -> AVAudioPlayer {
-        return self.audioPlayer
+        return audioPlayer
     }
 }

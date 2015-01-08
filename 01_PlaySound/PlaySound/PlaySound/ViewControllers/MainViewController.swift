@@ -33,11 +33,11 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         loadPlayer()
         
         // set volumeStepper
-        self.volumeStepper.value = 0.1
+        volumeStepper.value = 0.1
         
         // set progressSlider
-        self.progressSlider!.value = 0
-        self.progressSlider.addTarget(self,
+        progressSlider!.value = 0
+        progressSlider.addTarget(self,
             action: Selector("progressSliderDidTouchUpInside"),
             forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -55,23 +55,23 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         // free license sample from : http://sampleswap.org/viewtopic.php?t=2450
         var soundFileURL: NSURL = NSBundle.mainBundle().URLForResource(kSampleSoundFileName, withExtension: "mp3")!
 
-        self.audioPlayer = AVAudioPlayer(contentsOfURL: soundFileURL, error: nil)
-        self.audioPlayer!.delegate = self
-        self.audioPlayer.volume = 0.1
+        audioPlayer = AVAudioPlayer(contentsOfURL: soundFileURL, error: nil)
+        audioPlayer!.delegate = self
+        audioPlayer.volume = 0.1
     }
     
     // MARK: - button delegate methods
 
     @IBAction func playButtonDidTouchUpInside(button: UIButton)
     {
-        self.audioPlayer!.play()
+        audioPlayer!.play()
         makeProgressTimer()
     }
     
     @IBAction func stopButtonDidTouchUpInside(button: UIButton)
     {
         invalidateProgressTimer()
-        self.audioPlayer!.stop()
+        audioPlayer!.stop()
         
     }
  
@@ -80,7 +80,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     @IBAction func volumeStepperDidChanged(stepper: UIStepper)
     {
         let currentVolume = Float(stepper.value)
-        self.audioPlayer!.volume = currentVolume
+        audioPlayer!.volume = currentVolume
         setVolumeLabel(currentVolume)
     }
 
@@ -88,19 +88,19 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func updateVolumeLabel()
     {
-        let currentVolume = Float(self.volumeStepper.value)
+        let currentVolume = Float(volumeStepper.value)
         setVolumeLabel(currentVolume)
     }
     
     func setVolumeLabel(volumeValue :Float)
     {
-        self.volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
+        volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
     }
     
     private func updateProgressLabel()
     {
-        let progressPercentValue = NSString(format: kProgressLabelTextFormat, self.progressSlider.value * 100)
-        self.progressLabel!.text = progressPercentValue
+        let progressPercentValue = NSString(format: kProgressLabelTextFormat, progressSlider.value * 100)
+        progressLabel!.text = progressPercentValue
     }
     
     private func updatePlayedTimeLabel()
@@ -129,16 +129,16 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
             return playTimelabelText
         }
         
-        let currentTimeValue = CFloat(self.audioPlayer!.currentTime)
+        let currentTimeValue = CFloat(audioPlayer!.currentTime)
         
-        self.playedTimeLabel.attributedText = playTimeLabelText(currentTimeValue)
+        playedTimeLabel.attributedText = playTimeLabelText(currentTimeValue)
     }
     
     // MARK: - progressTimer
     
     func makeProgressTimer()
     {
-        self.progressTimer = NSTimer.scheduledTimerWithTimeInterval(0.1,
+        progressTimer = NSTimer.scheduledTimerWithTimeInterval(0.1,
             target: self,
             selector: Selector("progressTimerDidChangedInterval"),
             userInfo: nil,
@@ -147,21 +147,21 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func invalidateProgressTimer()
     {
-        if (self.progressTimer == nil) {
+        if (progressTimer == nil) {
             return
         }
         
-        self.progressTimer!.invalidate()
-        self.progressTimer = nil
+        progressTimer!.invalidate()
+        progressTimer = nil
     }
     
     func progressTimerDidChangedInterval()
     {
-        if (self.progressSlider.touchInside) {
+        if (progressSlider.touchInside) {
             return
         }
         
-        self.progressSlider!.value = CFloat(self.audioPlayer!.currentTime / self.audioPlayer!.duration)
+        progressSlider!.value = CFloat(audioPlayer!.currentTime / audioPlayer!.duration)
         updateProgressLabel()
         updatePlayedTimeLabel()
     }
@@ -170,18 +170,18 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func progressSliderDidTouchUpInside()
     {
-        let resume: Bool = self.audioPlayer.playing
+        let resume: Bool = audioPlayer.playing
         
-        self.invalidateProgressTimer()
+        invalidateProgressTimer()
 
-        self.audioPlayer.stop()
-        self.audioPlayer.currentTime = NSTimeInterval(CFloat(self.audioPlayer.duration) * self.progressSlider.value)
-        self.audioPlayer.prepareToPlay()
+        audioPlayer.stop()
+        audioPlayer.currentTime = NSTimeInterval(CFloat(audioPlayer.duration) * progressSlider.value)
+        audioPlayer.prepareToPlay()
         if (resume) {
-            self.audioPlayer.play()
+            audioPlayer.play()
         }
-        self.makeProgressTimer()
-        self.updateProgressLabel()
+        makeProgressTimer()
+        updateProgressLabel()
     }
     
     // MARK : - audioPlayer delegate mehtods
