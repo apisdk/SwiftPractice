@@ -117,7 +117,7 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
             }
             
             func timeUnitString() -> NSAttributedString {
-                let stringAttribute: NSDictionary = [NSFontAttributeName : UIFont.systemFontOfSize(timeUnitFontSize), NSForegroundColorAttributeName : UIColor.grayColor()]
+                let stringAttribute: NSDictionary = [NSFontAttributeName : UIFont.systemFontOfSize(timeUnitFontSize), NSForegroundColorAttributeName : UIColor.greenColor()]
                 let result: NSAttributedString = NSAttributedString(string: " sec", attributes: stringAttribute)
                 return result
             }
