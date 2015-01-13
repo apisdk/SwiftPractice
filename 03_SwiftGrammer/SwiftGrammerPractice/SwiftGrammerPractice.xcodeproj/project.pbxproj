@@ -12,6 +12,7 @@
 		A08CAD611A6373A8007F02EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08CAD601A6373A8007F02EA /* Images.xcassets */; };
 		A08CAD641A6373A8007F02EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08CAD621A6373A8007F02EA /* Main.storyboard */; };
 		A08CAD701A6373A8007F02EA /* SwiftGrammerPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD6F1A6373A8007F02EA /* SwiftGrammerPracticeTests.swift */; };
+		A08CAD7A1A64E6E1007F02EA /* GenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD791A64E6E1007F02EA /* GenericTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		A08CAD691A6373A8007F02EA /* SwiftGrammerPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGrammerPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08CAD6E1A6373A8007F02EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08CAD6F1A6373A8007F02EA /* SwiftGrammerPracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrammerPracticeTests.swift; sourceTree = "<group>"; };
+		A08CAD791A64E6E1007F02EA /* GenericTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A08CAD6F1A6373A8007F02EA /* SwiftGrammerPracticeTests.swift */,
+				A08CAD791A64E6E1007F02EA /* GenericTests.swift */,
 				A08CAD6D1A6373A8007F02EA /* Supporting Files */,
 			);
 			path = SwiftGrammerPracticeTests;
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08CAD701A6373A8007F02EA /* SwiftGrammerPracticeTests.swift in Sources */,
+				A08CAD7A1A64E6E1007F02EA /* GenericTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

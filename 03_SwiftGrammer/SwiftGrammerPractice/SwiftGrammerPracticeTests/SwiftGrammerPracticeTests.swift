@@ -81,6 +81,7 @@ class Car : NSObject{
         newCar.type = self.type
         return newCar
     }
+
 }
 
 class SwiftGrammerPracticeTests: XCTestCase {
@@ -139,5 +140,5 @@ class SwiftGrammerPracticeTests: XCTestCase {
         
         XCTAssertTrue(carType != copiedCar.type, "carType is equal to origin type")
     }
-    
+
 }
