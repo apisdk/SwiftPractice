@@ -57,7 +57,7 @@ enum CarType: Int, Printable  {
 
 }
 
-class Car : NSObject {
+class Car : NSObject{
     var model: String
     var leesee: Person?
     var type: CarType
@@ -74,6 +74,12 @@ class Car : NSObject {
     
     deinit {
         println("Car(\(model)) is being deinitialized")
+    }
+    
+    override func copy() -> AnyObject {
+        var newCar: Car = Car(model:self.model)
+        newCar.type = self.type
+        return newCar
     }
 }
 
@@ -121,6 +127,17 @@ class SwiftGrammerPracticeTests: XCTestCase {
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testObjectCopy() {
+        let person: Person = self.people.last!
+        let car: Car = person.car!
+        let carType: CarType = car.type
+        
+        var copiedCar: Car = car.copy() as Car
+        copiedCar.type = .BIG
+        
+        XCTAssertTrue(carType != copiedCar.type, "carType is equal to origin type")
     }
     
 }
