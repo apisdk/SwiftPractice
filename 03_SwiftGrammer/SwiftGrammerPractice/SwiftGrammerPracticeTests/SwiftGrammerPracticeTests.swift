@@ -14,7 +14,7 @@ class Person : NSObject {
     var car: Car?
     
     override init() {
-        name = "John"
+        name = "unknown"
     }
     
     init(name: String) {
@@ -24,6 +24,25 @@ class Person : NSObject {
     deinit {
         println("Person(\(name)) is being deinitialized")
     }
+}
+
+
+class BusDriver : Person {
+    var registration: String!
+   
+    override init() {
+        super.init()
+    }
+    
+    init(name: String, registration: String) {
+        super.init(name: name)
+        self.registration = registration
+    }
+    
+    override convenience init(name: String) {
+        self.init(name:name, registration:"")
+    }
+    
 }
 
 enum CarType: Int, Printable  {
@@ -139,6 +158,14 @@ class SwiftGrammerPracticeTests: XCTestCase {
         copiedCar.type = .BIG
         
         XCTAssertTrue(carType != copiedCar.type, "carType is equal to origin type")
+    }
+    
+    func testConvenienceInitialize()
+    {
+        var driver: BusDriver = BusDriver(name: "Tom", registration: "REG001")
+        NSLog(driver.name)
+        NSLog(driver.registration)
+        XCTAssertNotNil(driver, "driver is nil")
     }
 
 }
