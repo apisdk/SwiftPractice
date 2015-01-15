@@ -94,6 +94,12 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
     
     func setVolumeLabel(volumeValue :Float)
     {
+        if (volumeValue % 2 == 0) {
+            volumeLabel!.textColor = UIColor.yellowColor()
+        } else {
+            volumeLabel!.textColor = UIColor.yellowColor()
+        }
+        
         volumeLabel!.text = NSString(format:  "%.1f", volumeValue)
     }
     
