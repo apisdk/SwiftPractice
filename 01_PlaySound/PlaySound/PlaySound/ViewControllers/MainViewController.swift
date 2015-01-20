@@ -83,6 +83,16 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         let currentVolume = Float(stepper.value)
         audioPlayer!.volume = currentVolume
         setVolumeLabel(currentVolume)
+        var originFrame: CGRect = volumeLabel.frame
+        UIView.animateWithDuration(1.0,
+            delay: 0.1,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0.8,
+            options: nil,
+            animations:{
+                self.volumeLabel!.frame.size = CGSizeMake(originFrame.size.width + 13, originFrame.size.height + 13)
+            },
+            nil)
     }
 
     // MARK: - update UI methods
