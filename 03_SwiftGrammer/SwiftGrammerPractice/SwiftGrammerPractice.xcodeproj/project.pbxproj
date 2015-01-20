@@ -13,6 +13,14 @@
 		A08CAD641A6373A8007F02EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08CAD621A6373A8007F02EA /* Main.storyboard */; };
 		A08CAD701A6373A8007F02EA /* SwiftGrammerPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD6F1A6373A8007F02EA /* SwiftGrammerPracticeTests.swift */; };
 		A08CAD7A1A64E6E1007F02EA /* GenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD791A64E6E1007F02EA /* GenericTests.swift */; };
+		A0FCBC441A6E82A200CE7BC5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC431A6E82A200CE7BC5 /* Person.swift */; };
+		A0FCBC451A6E82A200CE7BC5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC431A6E82A200CE7BC5 /* Person.swift */; };
+		A0FCBC471A6E82B900CE7BC5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC461A6E82B900CE7BC5 /* Car.swift */; };
+		A0FCBC481A6E82B900CE7BC5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC461A6E82B900CE7BC5 /* Car.swift */; };
+		A0FCBC4A1A6E82ED00CE7BC5 /* CarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC491A6E82ED00CE7BC5 /* CarType.swift */; };
+		A0FCBC4B1A6E82ED00CE7BC5 /* CarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC491A6E82ED00CE7BC5 /* CarType.swift */; };
+		A0FCBC4D1A6E830800CE7BC5 /* BusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC4C1A6E830800CE7BC5 /* BusDriver.swift */; };
+		A0FCBC4E1A6E830800CE7BC5 /* BusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCBC4C1A6E830800CE7BC5 /* BusDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,10 @@
 		A08CAD6E1A6373A8007F02EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08CAD6F1A6373A8007F02EA /* SwiftGrammerPracticeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGrammerPracticeTests.swift; sourceTree = "<group>"; };
 		A08CAD791A64E6E1007F02EA /* GenericTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTests.swift; sourceTree = "<group>"; };
+		A0FCBC431A6E82A200CE7BC5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = SwiftGrammerPracticeTests/Models/Person.swift; sourceTree = SOURCE_ROOT; };
+		A0FCBC461A6E82B900CE7BC5 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Car.swift; path = SwiftGrammerPracticeTests/Models/Car.swift; sourceTree = SOURCE_ROOT; };
+		A0FCBC491A6E82ED00CE7BC5 /* CarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarType.swift; path = SwiftGrammerPracticeTests/Models/CarType.swift; sourceTree = SOURCE_ROOT; };
+		A0FCBC4C1A6E830800CE7BC5 /* BusDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusDriver.swift; path = SwiftGrammerPracticeTests/Models/BusDriver.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 		A08CAD591A6373A8007F02EA /* SwiftGrammerPractice */ = {
 			isa = PBXGroup;
 			children = (
+				A0FCBC421A6E827D00CE7BC5 /* Models */,
 				A08CAD5C1A6373A8007F02EA /* AppDelegate.swift */,
 				A08CAD5E1A6373A8007F02EA /* ViewController.swift */,
 				A08CAD601A6373A8007F02EA /* Images.xcassets */,
@@ -110,6 +123,17 @@
 				A08CAD6E1A6373A8007F02EA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0FCBC421A6E827D00CE7BC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0FCBC431A6E82A200CE7BC5 /* Person.swift */,
+				A0FCBC4C1A6E830800CE7BC5 /* BusDriver.swift */,
+				A0FCBC461A6E82B900CE7BC5 /* Car.swift */,
+				A0FCBC491A6E82ED00CE7BC5 /* CarType.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +235,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FCBC4D1A6E830800CE7BC5 /* BusDriver.swift in Sources */,
+				A0FCBC441A6E82A200CE7BC5 /* Person.swift in Sources */,
 				A08CAD5F1A6373A8007F02EA /* ViewController.swift in Sources */,
+				A0FCBC471A6E82B900CE7BC5 /* Car.swift in Sources */,
+				A0FCBC4A1A6E82ED00CE7BC5 /* CarType.swift in Sources */,
 				A08CAD5D1A6373A8007F02EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FCBC4E1A6E830800CE7BC5 /* BusDriver.swift in Sources */,
+				A0FCBC451A6E82A200CE7BC5 /* Person.swift in Sources */,
 				A08CAD701A6373A8007F02EA /* SwiftGrammerPracticeTests.swift in Sources */,
+				A0FCBC481A6E82B900CE7BC5 /* Car.swift in Sources */,
+				A0FCBC4B1A6E82ED00CE7BC5 /* CarType.swift in Sources */,
 				A08CAD7A1A64E6E1007F02EA /* GenericTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +433,7 @@
 				A08CAD751A6373A8007F02EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A08CAD761A6373A8007F02EA /* Build configuration list for PBXNativeTarget "SwiftGrammerPracticeTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +442,7 @@
 				A08CAD781A6373A8007F02EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

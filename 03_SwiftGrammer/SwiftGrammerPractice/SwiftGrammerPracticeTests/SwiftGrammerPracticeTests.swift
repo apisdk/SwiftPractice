@@ -9,99 +9,6 @@
 import Cocoa
 import XCTest
 
-class Person : NSObject {
-    var name: String!
-    var car: Car?
-    
-    override init() {
-        name = "unknown"
-    }
-    
-    init(name: String) {
-        self.name = name
-    }
-    
-    deinit {
-        println("Person(\(name)) is being deinitialized")
-    }
-}
-
-
-class BusDriver : Person {
-    var registration: String!
-   
-    override init() {
-        super.init()
-    }
-    
-    init(name: String, registration: String) {
-        super.init(name: name)
-        self.registration = registration
-    }
-    
-    override convenience init(name: String) {
-        self.init(name:name, registration:"")
-    }
-    
-}
-
-enum CarType: Int, Printable  {
-    case BIG = 0
-    case MIDDLE
-    case SMALL
-    case NONE
-    
-    var description: String {
-        get {
-            return self.stringValue()
-        }
-    }
-    
-    private func stringValue() -> String {
-        var result: String!
-        
-        switch self {
-        case BIG:
-            result = "BIG"
-        case MIDDLE:
-            result = "MIDDLE"
-        case SMALL:
-            result = "SMALL"
-        default:
-            result = "NONE"
-        }
-        
-        return result
-    }
-
-}
-
-class Car : NSObject{
-    var model: String
-    var leesee: Person?
-    var type: CarType
-    
-    init(model: String) {
-        self.model = model
-        self.type = CarType.NONE
-    }
-    
-    init(model: String, type: CarType) {
-        self.model = model
-        self.type = type
-    }
-    
-    deinit {
-        println("Car(\(model)) is being deinitialized")
-    }
-    
-    override func copy() -> AnyObject {
-        var newCar: Car = Car(model:self.model)
-        newCar.type = self.type
-        return newCar
-    }
-
-}
 
 class SwiftGrammerPracticeTests: XCTestCase {
     
@@ -111,8 +18,8 @@ class SwiftGrammerPracticeTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        var person: Person = Person()
-        var ponyCar: Car = Car(model: "Pony")
+        var person: Person = Person(name:"TEST_PERSON")
+        var ponyCar: Car = Car(model: "TEST_MODEL_NAME")
         ponyCar.type = CarType.SMALL
         person.car = ponyCar
         
@@ -146,6 +53,26 @@ class SwiftGrammerPracticeTests: XCTestCase {
         reference1 = nil
         reference3 = nil
         reference3 = nil
+    }
+    
+    func testReferenceCycleError() {
+        var leesee: Person? = Person(name: "Bread")
+        var car: Car? = Car(model: "Lightning")
+        leesee?.car = car
+        car?.leesee = leesee
+        leesee = nil
+        car = nil
+        // does not call deinitialize method from Car, Person
+    }
+    
+    func testWeakReference() {
+        var seller: Person? = Person(name: "Bread")
+        var car: Car? = Car(model: "Boogy")
+        seller?.car = car
+        car?.seller = seller
+        seller = nil
+        car = nil
+        // does not call deinitialize method from Car, Person
     }
 
     func testDescriptionOfEnum() {
