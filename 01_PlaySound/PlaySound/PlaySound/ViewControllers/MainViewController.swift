@@ -16,6 +16,7 @@ let kCancelButtonTitle = "Confirm"
 class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
 {
     var progressTimer: NSTimer?
+    var newHuman: NSObject?
     
     @IBOutlet var progressSlider:UISlider!
     @IBOutlet var volumeStepper:UIStepper!
@@ -108,8 +109,10 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         func playTimeLabelText(currentTimeValue: Float) -> NSAttributedString {
             let currentTimeFontSize: CGFloat = 18.0
             let timeUnitFontSize: CGFloat = 12.0
+
             
             func currentTimeString(timeString: Float) -> NSAttributedString {
+
                 let currentTimeString: String = String(format: "%.0f", timeString)
                 let stringAttribute: NSDictionary = [NSFontAttributeName : UIFont.systemFontOfSize(currentTimeFontSize), NSForegroundColorAttributeName : UIColor.redColor()]
                 let result: NSAttributedString = NSAttributedString(string: currentTimeString, attributes: stringAttribute)
@@ -131,7 +134,10 @@ class MainViewController: MusicPlayerViewController, AVAudioPlayerDelegate
         
         let currentTimeValue = CFloat(audioPlayer!.currentTime)
         
-        playedTimeLabel.attributedText = playTimeLabelText(currentTimeValue)
+        autoreleasepool {
+            self.playedTimeLabel.attributedText = playTimeLabelText(currentTimeValue)
+        }
+
     }
     
     // MARK: - progressTimer

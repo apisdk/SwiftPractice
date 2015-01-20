@@ -128,10 +128,24 @@ class SwiftGrammerPracticeTests: XCTestCase {
         people.removeAll(keepCapacity: true)
     }
     
-    func testRetainCount() {
-        // This is an example of a functional test case.
+    func testStrongReference() {
         
-
+        // initialized value of nil
+        var reference1: Person?
+        var reference2: Person?
+        var reference3: Person?
+        
+        // strong reference
+        reference1 = Person(name: "Tony")
+        
+        // strong reference
+        reference2 = reference1
+        reference3 = reference2
+        
+        // set nil
+        reference1 = nil
+        reference3 = nil
+        reference3 = nil
     }
 
     func testDescriptionOfEnum() {
