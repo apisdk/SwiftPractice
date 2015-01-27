@@ -11,6 +11,7 @@ import Foundation
 class Person : NSObject {
     var name: String!
     var car: Car?
+    var fitnessMembership: Membership?
     
     override init() {
         name = "unknown"

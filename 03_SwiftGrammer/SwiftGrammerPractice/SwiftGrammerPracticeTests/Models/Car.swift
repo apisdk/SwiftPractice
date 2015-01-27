@@ -13,6 +13,24 @@ class Car : NSObject {
     var leesee: Person?
     weak var seller: Person?
     var type: CarType
+    var totalDrivingDistance: Double = 0.0
+    var totalUsedGas: Double = 0.0
+    
+    lazy var gasMileage: () -> Double = {
+        [unowned self] in
+        return self.totalDrivingDistance / self.totalUsedGas
+    }
+
+//    lazy var gasMileage: () -> Double = {
+//        [weak self] () -> Double in
+//        return self!.totalDrivingDistance / self!.totalUsedGas
+//    }
+
+    
+    func drive(distance: Double, usedGas: Double) {
+        self.totalDrivingDistance += distance
+        self.totalUsedGas += usedGas
+    }
     
     init(model: String) {
         self.model = model

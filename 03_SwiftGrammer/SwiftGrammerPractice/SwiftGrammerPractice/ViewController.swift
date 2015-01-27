@@ -34,6 +34,8 @@ class ViewController: NSViewController {
         makeSquareView()
         
         testMemoryLeak()
+        testClosureLeak()
+        testUnownedTest()
     }
 
     func makeSquareView() {
@@ -65,6 +67,21 @@ class ViewController: NSViewController {
         
         seller = nil
         sellerCar = nil
+    }
+    
+    func testUnownedTest() {
+        var person: Person? = Person(name: "Peter")
+
+        person?.fitnessMembership = Membership(owner: person!)
+
+    }
+    
+    func testClosureLeak() {
+        var myCar: Car? = Car(model: "tico")
+        myCar!.drive(1300.0, usedGas: 73.0)
+        let mileage: Double = myCar!.gasMileage()
+        NSLog("%f", mileage)
+        myCar = nil
     }
     
     override var representedObject: AnyObject? {

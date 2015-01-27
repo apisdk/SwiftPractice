@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A08BF3281A7728AD006D40DC /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BF3271A7728AD006D40DC /* Membership.swift */; };
+		A08BF3291A772A44006D40DC /* Membership.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BF3271A7728AD006D40DC /* Membership.swift */; };
 		A08CAD5D1A6373A8007F02EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD5C1A6373A8007F02EA /* AppDelegate.swift */; };
 		A08CAD5F1A6373A8007F02EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CAD5E1A6373A8007F02EA /* ViewController.swift */; };
 		A08CAD611A6373A8007F02EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08CAD601A6373A8007F02EA /* Images.xcassets */; };
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A08BF3271A7728AD006D40DC /* Membership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Membership.swift; path = SwiftGrammerPracticeTests/Models/Membership.swift; sourceTree = SOURCE_ROOT; };
 		A08CAD571A6373A8007F02EA /* SwiftGrammerPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGrammerPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08CAD5B1A6373A8007F02EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08CAD5C1A6373A8007F02EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 				A0FCBC4C1A6E830800CE7BC5 /* BusDriver.swift */,
 				A0FCBC461A6E82B900CE7BC5 /* Car.swift */,
 				A0FCBC491A6E82ED00CE7BC5 /* CarType.swift */,
+				A08BF3271A7728AD006D40DC /* Membership.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -240,6 +244,7 @@
 				A08CAD5F1A6373A8007F02EA /* ViewController.swift in Sources */,
 				A0FCBC471A6E82B900CE7BC5 /* Car.swift in Sources */,
 				A0FCBC4A1A6E82ED00CE7BC5 /* CarType.swift in Sources */,
+				A08BF3281A7728AD006D40DC /* Membership.swift in Sources */,
 				A08CAD5D1A6373A8007F02EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +258,7 @@
 				A08CAD701A6373A8007F02EA /* SwiftGrammerPracticeTests.swift in Sources */,
 				A0FCBC481A6E82B900CE7BC5 /* Car.swift in Sources */,
 				A0FCBC4B1A6E82ED00CE7BC5 /* CarType.swift in Sources */,
+				A08BF3291A772A44006D40DC /* Membership.swift in Sources */,
 				A08CAD7A1A64E6E1007F02EA /* GenericTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
