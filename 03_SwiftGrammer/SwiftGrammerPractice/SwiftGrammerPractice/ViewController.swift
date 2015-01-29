@@ -73,7 +73,6 @@ class ViewController: NSViewController {
         var person: Person? = Person(name: "Peter")
 
         person?.fitnessMembership = Membership(owner: person!)
-
     }
     
     func testClosureLeak() {
